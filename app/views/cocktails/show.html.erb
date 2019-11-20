@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-10">
+      <div class="row main-card">
+        <div class="card-img col-md-4 col-xs-12 m-25 justify-content-center">
+          <img src="https://www.kahlua.com/globalassets/images/cocktails/2018/opt/kahluadrinks_blackrussian1.png" alt="black russian">
+        </div>
+        <div class="card-content col-md-8 col-xs-12">
+          <div class='card-headers'>
+            <h1><%= @cocktail.name %></h1>
+            <h3>Cocktail</h3>
+          </div>
+          <div class="row card-details">
+            <div class='col-md-6 col-xs-6 pl-4'>
+              <h4>Ingredients:</h4>
+              <ul>
+                <% @cocktail.doses.each do |dose| %>
+                <li><%= dose.ingredient.name %> - <%= dose.description %>
+                  <%= link_to dose_path(dose), method: :delete do %>
+                  <i class="fas fa-times"></i>
+                  <% end %>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+            <div class='col-md-6 col-xs-6'>
+              <h4>Recipe:</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis rerum, praesentium odit laborum. Libero, debitis quod, vel fugiat assumenda aliquam sit autem sequi, labore sapiente magnam nemo fugit id.</p>
+            </div>
+          </div>
+          <%= link_to root_path do %>
+          <i class="fas fa-undo-alt return-link"></i>
+          <% end %>
+        <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail), class: 'pl-2' %></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TO DO:
+Work with other pictures
+Make links not 'jump' -->

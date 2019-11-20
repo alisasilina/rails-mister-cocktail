@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-10">
+      <div class="main-card">
+        <h1 class='text-center'>Cocktails</h1>
+        <%= link_to new_cocktail_path do  %>
+        <i class="fas fa-plus-circle add-cocktail"></i>
+        <% end %>
+        <div class="d-flex">
+        <% @cocktails.each do |cocktail| %>
+        <div class="cocktail-card">
+        <img src="https://www.kahlua.com/globalassets/images/cocktails/2018/opt/kahluadrinks_blackrussian1.png" alt="black russian">
+        <p class='text-center'><%= link_to cocktail.name, cocktail_path(cocktail) %><%=  %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
